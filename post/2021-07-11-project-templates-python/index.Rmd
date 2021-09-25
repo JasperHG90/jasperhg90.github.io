@@ -1,0 +1,38 @@
+---
+title: "Poetry project templates for Python"
+author: "Jasper Ginn"
+date: 2021-07-11T13:13:14
+categories: ["Python"]
+tags: ["cookiecutter", "project templates"]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE)
+```
+
+Often, beginning a new Python project starts with the same steps: (1) virtual environment, (2) dependencies, (3) project folders, (4) coding. If you're trying to get up-and-running quickly, it often happens that you get sloppy on steps 1-3, a decision that starts to haunt you once you *really* need to get productive. Additionally, my python projects involve a lot more dependencies that I re-use pretty much all the time (black, pre-commit, mypy etc). Honestly, I don't always remember how I set things up in a previous project, and I certainly don't remember all the commands I need to set everything up correctly. 
+
+Plus, you know, I don't really enjoy doing repetitive tasks. 
+
+I've been using cookiecutter templates at a client recently, and I'd been toying with creating a [cookiecutter](https://cookiecutter.readthedocs.io/en/1.7.2/) template but didn't have the time to set it up properly. I then came across the [data science cookiecutter template](https://drivendata.github.io/cookiecutter-data-science/) and really liked the look of it. 
+
+I only had one problem with the setup: it didn't use [poetry](https://python-poetry.org/).
+
+## Poetry 
+
+Poetry is a tool that greatly simplifies python dependency management and writing python packages. The dependency management system is inspired by sleek dependency management systems like the Rust package manager [Cargo](https://doc.rust-lang.org/cargo/). When you add python libraries, poetry resolves all dependencies and writes them to a lock file. It uses the `pyproject.toml` to describe the project (instead of `setup.py`) & define dependencies. The `pyproject.toml` file was introduced in [PEP 518](https://www.python.org/dev/peps/pep-0518/) so that developers could specify their build dependencies. If you want to know more, then be sure to check out [this post](https://snarky.ca/what-the-heck-is-pyproject-toml/).
+
+This isn't a post about poetry, so I'll leave it to you to read the documentation. Suffice to say that I enjoy working with poetry because of the great dependency manager and because it makes developing libraries a lot easier. Poetry also has excellent integration with [pyenv](https://github.com/pyenv/pyenv) for python version management. Note that poetry does not replace pip. Pip is a package manager, which poetry isn't. In fact, to install a poetry project, you will still use `pip install`.
+
+## Poetry project templates
+
+I created/adapted a couple of templates for python projects that use poetry, which you can find [here](https://github.com/JasperHG90/python-project-templates). There are currently 2 available templates:
+
+1. **base**: this is the 'basic' project template on which the other templates build. It installs [pytest](https://docs.pytest.org/en/6.2.x/), [black](https://github.com/psf/black), [mypy](http://mypy-lang.org/), [flake8](https://flake8.pycqa.org/en/latest/), [isort](https://github.com/PyCQA/isort), [pre-commit](https://pre-commit.com/), [bump2version](https://pypi.org/project/bump2version/) as development dependencies, and [loguru](https://github.com/Delgan/loguru), [python-dotenv](https://pypi.org/project/python-dotenv/) and [nptyping](https://pypi.org/project/nptyping/) as regular dependencies. The template contains the module folder, a tests folder, a pre-commit configuration, an optional CircleCI configuration, a Makefile and a .gitignore with common file patterns to ignore.
+2. **datascience**: adapted from drivendata's [cookiecutter data science v1 template](https://github.com/drivendata/cookiecutter-data-science) to accommodate poetry. I also changed some of the folder names and added some that I find useful. This template contains everything that the `base` branch has, but with additional dependencies, files, and Makefile commands.
+
+## Finishing thoughts
+
+Project templates are necessarily restrictive. For example, I pin or bound all dependencies so these need to be updated manually. Also, I will need to update the project template in case e.g. changes are made to the structure of the `pyproject.toml`. Honestly, though, these changes are easy enough to make and I lose more time by having to set up my projects from scratch all the time.
+
+In the future, I plan to add additional templates for workloads that are common enough (e.g. setting up a project that uses [Pulumi](https://www.pulumi.com/)). Of course, contributions to the repository are welcome.
