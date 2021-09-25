@@ -1,0 +1,59 @@
+theme: "hugo-PaperMod"
+baseURL: http://example.org/
+languageCode: en-us
+title: Jasper Ginn
+
+params:
+    env: production # to enable google analytics, opengraph, twitter-cards and schema.
+    description: "Theme PaperMod - https://github.com/adityatelange/hugo-PaperMod"
+    author: Theme PaperMod
+    # author: ["Me", "You"] # multiple authors
+
+    defaultTheme: auto
+    # disableThemeToggle: true
+    ShowShareButtons: true
+    ShowReadingTime: true
+    # disableSpecial1stPost: true
+    displayFullLangName: true
+    ShowPostNavLinks: true
+    ShowBreadCrumbs: true
+    ShowCodeCopyButtons: true
+    ShowToc: true
+    # comments: false
+    images: ["papermod-cover.png"]
+
+    profileMode:
+        enabled: false
+        title: ''
+        imageUrl: "#"
+        imageTitle: my image
+        # imageWidth: 120
+        # imageHeight: 120
+        buttons:
+            - name: Archives
+              url: archives
+            - name: Tags
+              url: tags
+
+    homeInfoParams:
+        Title: ""
+        Content: >
+            Hi! I'm Jasper. I've been working as a data specialist for the last five years.
+            Currently, I'm a data engineer at GoDataDriven, where I'm applying (and developing) 
+            my skills in building data pipelines, analytics engineering, and MLOps. I enjoy 
+            equal parts working on R&D projects, productionizing solutions and coaching teams 
+            on becoming data-driven. 
+    socialIcons:
+        - name: linkedin
+          url: "https://nl.linkedin.com/in/jasperginn"
+        - name: github
+          url: "https://github.com/JasperHG90"
+        - name: gscholar
+          url: "https://scholar.google.com/citations?user=QFKUzq0AAAAJ&hl=en"
+        - name: kaggle
+          url: "https://www.kaggle.com/jasperginn"
+
+    editPost:
+        URL: "https://github.com/adityatelange/hugo-PaperMod/tree/exampleSite/content"
+        Text: "Suggest Changes" # edit text
+        appendFilePath: true # to append file path to Edit link

@@ -1,0 +1,13 @@
+{
+    "dialog-state": {
+        "query": "Linkedin",
+        "path": "~/PycharmProjects/jasper_blog_gh",
+        "regex": false,
+        "caseSensitive": false,
+        "filePatterns": [],
+        "excludeFilePatterns": [],
+        "resultsCount": 5,
+        "errorCount": 0,
+        "replaceErrors": ""
+    }
+}
